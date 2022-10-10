@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.nio.charset.StandardCharsets;
+
 import taisui.enc_so.databinding.ActivityMainBinding;
 import JAVA.Java_crypto;
 
@@ -43,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
         s("Java_crypto on Android Logcat of TAG 'tais00'");
     }
 
+    public static void fs(View view) {
+        String raw = g();
+        int a = raw.getBytes(StandardCharsets.UTF_8)[raw.length() - 1];
+        s(raw);
+        s2(M.f(new Fans(a)));
+    }
 
     public static String g() {
         return new StringBuilder("Wecat_tais00_").append(System.currentTimeMillis()).toString();
@@ -61,12 +69,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 class M {
-    {
+    static {
         System.loadLibrary("_wx_taisui00");
     }
 
     public native String m(String tais00);
 
+    public static native String f(Fans tais00);
 }
 
 
